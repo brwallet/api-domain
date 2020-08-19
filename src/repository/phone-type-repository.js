@@ -1,7 +1,7 @@
 const DatabaseFactory = require('./database-factory');
+var conn = new DatabaseFactory();
 
 class PhoneTypeRepository {
-    #conn = new DatabaseFactory();
 
     async list() {
         let query = `
@@ -15,7 +15,7 @@ class PhoneTypeRepository {
                 dominio.tipo_telefone;`
 
         const args = [];
-        return await this.#conn.executeQuery(query, args);
+        return await conn.executeQuery(query, args);
     }
 
 }

@@ -9,13 +9,4 @@ const connectionPool = mysql.createPool({
   database: dbConfig.DB
 });
 
-connectionPool.getConnection(function (err, connection) {
-  if (err) {
-    console.log('Database not connected.');
-    console.error(JSON.stringify(err))
-    throw err; // not connected!
-  }
-  console.log('Database connected.');
-});
-
 module.exports = connectionPool;
