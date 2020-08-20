@@ -15,7 +15,9 @@ class PhoneTypeRepository {
                 dominio.tipo_telefone;`
 
         const args = [];
-        return await conn.executeQuery(query, args);
+        const resultDB = await conn.executeQuery(query, args);
+        
+        return resultDB;
     }
 
 }
